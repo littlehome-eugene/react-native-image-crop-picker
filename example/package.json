@@ -6,12 +6,18 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "16.3.2",
-    "react-native": "0.55.4",
+    "react": "^16.6.3",
+    "react-native": "^0.57.4",
     "react-native-image-crop-picker": "../",
     "react-native-video": "git://github.com/react-native-community/react-native-video.git"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.47.1",
     "react-native-cli": "^2.0.1"
   }
 }

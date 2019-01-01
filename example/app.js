@@ -5,8 +5,11 @@ import {
 } from 'react-native';
 
 import Video from 'react-native-video';
+import ToastExample from './toast-example';
 
 var ImagePicker = NativeModules.ImageCropPicker;
+var Picker = NativeModules.ImagePicker;
+
 
 const styles = StyleSheet.create({
   container: {
@@ -182,6 +185,28 @@ export default class App extends Component {
     return this.renderImage(image);
   }
 
+  clickToast() {
+    // ToastExample.show('Awesome', ToastExample.SHORT);
+    ToastExample.show('Awesome', 2);
+  }
+
+  clickMatisse() {
+    Picker.openPicker({
+      multiple: true,
+      waitAnimationEnd: false,
+      includeExif: true,
+      forceJpg: true,
+    }).then(images => {
+      this.setState({
+        image: null,
+        images: images.map(i => {
+          console.log('received image', i);
+          return {uri: i.path, width: i.width, height: i.height, mime: i.mime};
+        })
+      });
+    }).catch(e => alert(e));
+  }
+  
   render() {
     return (<View style={styles.container}>
       <ScrollView>
@@ -218,6 +243,12 @@ export default class App extends Component {
       </TouchableOpacity>
       <TouchableOpacity onPress={this.cleanupSingleImage.bind(this)} style={styles.button}>
         <Text style={styles.text}>Cleanup Single Image</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={this.clickToast.bind(this)} style={styles.button}>
+        <Text style={styles.text}>Click Toast</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={this.clickMatisse.bind(this)} style={styles.button}>
+        <Text style={styles.text}>Click Matisse</Text>
       </TouchableOpacity>
     </View>);
   }

@@ -22,8 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
+<key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+        <key>NSAllowsArbitraryLoadsInWebContent</key>
+        <true/>
+        <key>NSAllowsLocalNetworking</key>
+        <true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>localhost</key>
@@ -32,7 +38,9 @@
 				<true/>
 			</dict>
 		</dict>
-	</dict>
+
+    </dict>
+
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
@@ -47,10 +55,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Testing purposes</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Testing purposes</string>
+  <key>NSCameraUsageDescription</key>
+<string>yourWording</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>yourWording</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>yourWording</string>
+
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

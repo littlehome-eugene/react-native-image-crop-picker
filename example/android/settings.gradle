@@ -6,3 +6,6 @@ project(':react-native-video').projectDir = new File(rootProject.projectDir, '..
 
 include ':react-native-image-crop-picker'
 project(':react-native-image-crop-picker').projectDir = new File(settingsDir, '../../android')
+
+
+include ':matisse'
